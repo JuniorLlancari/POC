@@ -30,13 +30,24 @@ public class GenerarTokenFunction
     {
         var response = new BaseResponse<string>();
 
-        var usuario = req.Form["usuario"].ToString();
-        if (string.IsNullOrEmpty(usuario))
-            return new BadRequestObjectResult("Usuario requerido");
+        try
+        {
+            var usuario = req.Form["usuario"].ToString();
+            if (string.IsNullOrEmpty(usuario))
+                return new BadRequestObjectResult("Usuario requerido");
 
-        var token = _jwtService.GenerarToken(usuario);
-        response.Data = token;
-        response.Success = true;
+            var token = _jwtService.GenerarToken(usuario);
+            response.Data = token;
+            response.Success = true;
+
+        }
+        catch (Exception ex)
+        {
+            response.ErrorMessage = ex.Message;
+            response.Success = false;
+        }
+
+
 
         return new OkObjectResult(response);
     }

@@ -23,7 +23,7 @@ namespace TipoCambio.ExceptionFilter
         {
             try
             {
-                await next(context); // Ejecuta la función
+                await next(context); 
             }
             catch (Exception ex)
             {
