@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "JwtSecretKey": "ClaveJwtSecretKey16b3f2fbad074968a6de62cd7acdbdfb!"
+
+
+  }
+}
